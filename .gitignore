@@ -39,3 +39,30 @@
 
 # debug information files
 *.dwo
+
+# Project files
+build/
+bin/
+dist/
+*.log
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+
+# MacOS / Windows junk
+.DS_Store
+Thumbs.db
+
+# Compiled debug files
+*.dSYM/
+*.idb
+
+# Generated data
+*.csv
+*.json
+*.tmp
+
+# Test files
+tests/temp/
