@@ -72,7 +72,7 @@ Throughout this course, remember to embrace C++'s strengths: manual memory manag
 
 To begin working on this project:
 
-1. **Fork the repository** — Click the "Fork" button at the top of this repository
+1. **Fork the repository** — Click the "Fork" button at the top of this repository. When prompted, check the option **"Copy the main branch only"**. This ensures your fork only contains the starter code from the `main` branch. You can still view all branches (including the `solution` branch) in the original repository, but your fork will start clean with just the starter code.
 2. **Clone your fork** — `git clone https://github.com/YOUR_USERNAME/AlgoQuest.git`
 3. **Create your working branch** — `git checkout -b your-name/module-1` (or similar naming convention)
 4. **Start coding!** — Begin with Module 1 and work through each module sequentially
