@@ -74,13 +74,12 @@ To begin working on this project:
 
 1. **Fork the repository** — Click the "Fork" button at the top of this repository
 2. **Clone your fork** — `git clone https://github.com/YOUR_USERNAME/AlgoQuest.git`
-3. **Checkout the starter branch** — `git checkout starter` (or `git checkout -b starter origin/starter` if the branch doesn't exist locally)
-4. **Create your working branch** — `git checkout -b your-name/module-1` (or similar naming convention)
-5. **Start coding!** — Begin with Module 1 and work through each module sequentially
+3. **Create your working branch** — `git checkout -b your-name/module-1` (or similar naming convention)
+4. **Start coding!** — Begin with Module 1 and work through each module sequentially
 
 **Important**: 
-- The `starter` branch contains the project structure and any starter code. Fork from this branch to begin your implementation.
-- The `main` branch contains the owner's working solution. As the owner completes each module, they create separate branches (e.g., `module-1`, `module-2`) and merge them into `main`. Please do not work directly from `main` — use the `starter` branch instead.
+- The `main` branch contains the starter code and project structure. This is where you should begin your implementation.
+- The `solution` branch contains the owner's working solution. As the owner completes each module, they create separate branches (e.g., `module-1`, `module-2`) and merge them into `solution`. Please do not work directly from `solution` — use the `main` branch instead.
 
 **Note on File Structure**: 
 - No specific file structure is provided intentionally. It is up to you as the programmer to decide how to organize your codebase. This is part of the learning experience—you'll need to think about how to structure your project, organize header files, source files, and modules. Consider factors like separation of concerns, maintainability, and scalability when designing your project structure.
