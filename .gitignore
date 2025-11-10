@@ -36,6 +36,7 @@
 *.exe
 *.out
 *.app
+algoquest
 
 # debug information files
 *.dwo
