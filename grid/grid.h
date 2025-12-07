@@ -3,8 +3,8 @@
 
 #include "../globals.h"
 
-void drawGrid();
+void initializeGrid();
 
-//TODO randomize obstacle placement
+// TODO randomize obstacle placement
 
 #endif

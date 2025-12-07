@@ -2,13 +2,40 @@
 
 #include "grid.h"
 
-void drawGrid(){
-    for (int i=0; i<ROWS; i++)
+void initializeGrid()
+{
+
+    // top edge output
+    std::cout << "+";
+    for (int i = 1; i < (ROWS * 4) - 2; i++)
     {
-        for (int j = 0; j<COLS; j++)
-        {
-            std::cout << "|*|";
-        }
-        std::cout << std::endl;
+        std::cout << "-";
     }
+    std::cout << "+";
+    std::cout << std::endl;
+
+    // grid output
+    for (int i = 0; i < ROWS; i++)
+    {
+        for (int j = 0; j < COLS; j++)
+        {
+            std::cout << "|.| ";
+        }
+        if (i == ROWS - 1)
+        {
+            std::cout << std::endl;
+            break;
+        }
+        std::cout << std::endl
+                  << std::endl;
+    }
+
+    // bottom edge output
+    std::cout << "+";
+    for (int i = 1; i < (ROWS * 4) - 2; i++)
+    {
+        std::cout << "-";
+    }
+    std::cout << "+";
+    std::cout << std::endl;
 }
