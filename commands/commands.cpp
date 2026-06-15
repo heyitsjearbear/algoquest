@@ -12,15 +12,24 @@ std::string getCommand()
     return input;
 }
 
-// void executeCommand(const std::string &cmd,
-//                     int &row, int &col)
-// {
-//     // cases where we do have space then here is
-//     // parsing  commands
-//     if (checkSpace(cmd))
-//     {
-//     }
-// }
+//NOTE: Not todo, but tokenList parameter deviates from README.md, we pass in the the list of tokens instead of reading form whole string
+void executeCommand(const std::vector<std::string> &tokenList,
+                    int &row, int &col)
+{   
+    //TODO need to figure out how we actually order the if statements in here for executing commands
+    // cases where we do have space then here is
+    // parsing  commands
+    // if (checkSpace(cmd))
+    // {
+    // }
+
+    if(tokenList.size()==1){
+        if (tokenList[0] == "exit") exit(0);
+        if (tokenList[0] == "help") std::cout << "helped was typed";
+    }
+
+
+}
 
 // bool checkSpace(const std::string &cmd)
 // {
