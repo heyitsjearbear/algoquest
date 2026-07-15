@@ -1,9 +1,10 @@
 #include <string>
 #include <vector>
+#include "../globals.h"
 std::string getCommand();
 
-void executeCommand(const std::string &cmd,
-                    int &row, int &col);
+void executeCommand(const std::vector<std::string> &tokenList,
+                    int ROWS, int COLS);
 
 bool checkSpace(const std::string &cmd);
 

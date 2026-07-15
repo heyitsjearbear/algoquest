@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -std=c++17 -Igrid -Icommands
+CXXFLAGS = -Wall -std=c++17 -g -O0 -Igrid -Icommands
 TARGET = algoquest
 
 # Source files

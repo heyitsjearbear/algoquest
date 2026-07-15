@@ -21,10 +21,12 @@ int main()
         std::vector<std::string> tokenList = createTokenList(playerInput);
 
         // test: print out commands to command line after typing in command
-        for (size_t i = 0; i < tokenList.size(); i++)
-        {
-            std::cout << tokenList[i] << std::endl;
-        }
+        // for (size_t i = 0; i < tokenList.size(); i++)
+        // {
+        //     std::cout << "COMMAND TYPED: " << tokenList[i] << std::endl;
+        // }
+
+        executeCommand(tokenList, ROWS, COLS);
 
     } while (playerInput != "exit");
 
