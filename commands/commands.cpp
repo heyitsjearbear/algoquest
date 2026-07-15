@@ -14,19 +14,25 @@ std::string getCommand()
 
 void executeCommand(const std::vector<std::string> &tokenList,
                     int ROWS, int COLS)
-{   
-    //TODO need to figure out how we actually order the if statements in here for executing commands
-    // cases where we do have space then here is
-    // parsing  commands
-    // if (checkSpace(cmd))
-    // {
-    // }
+{
+    // TODO need to figure out how we actually order the if statements in here for executing commands
+    //  cases where we do have space then here is
+    //  parsing  commands
+    //  if (checkSpace(cmd))
+    //  {
+    //  }
 
-    if(tokenList.size()==1){
-        if (tokenList[0] == "help") std::cout << "helped was typed";
+    if (tokenList.size() == 1)
+    {
+        if (tokenList[0] == "help")
+        {
+            std::cout << "Available commands: " << std::endl;
+            std::cout << "move north" << std::endl;
+            std::cout << "move south" << std::endl;
+            std::cout << "move east" << std::endl;
+            std::cout << "move west" << std::endl;
+        }
     }
-
-
 }
 
 // bool checkSpace(const std::string &cmd)
@@ -59,8 +65,9 @@ std::vector<std::string> createTokenList(const std::string &cmd)
                 currentString = "";
             }
         }
-        //if not a space
-        else currentString += cmd[i];
+        // if not a space
+        else
+            currentString += cmd[i];
     }
     // add last token if the string isn't empty
     if (!currentString.empty())
