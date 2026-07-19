@@ -32,6 +32,22 @@ void executeCommand(const std::vector<std::string> &tokenList,
             std::cout << "move east" << std::endl;
             std::cout << "move west" << std::endl;
         }
+        // TODO figure out logic for actually moving the player with the commands
+        else if (tokenList[1] == "move")
+        {
+            if (tokenList[2] == "north")
+            {
+
+            }
+            else if (tokenList[2] == "south"){
+
+            }
+            else if (tokenList[2] == "east")
+            {
+
+            }
+            else if (tokenList[2] == "west")
+        }
     }
 }
 
