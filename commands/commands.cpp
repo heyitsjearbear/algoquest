@@ -12,6 +12,7 @@ std::string getCommand()
     return input;
 }
 
+// TODO needs to be reframed so we check "if not" concept (read up on it to see where we can optimize  )
 void executeCommand(const std::vector<std::string> &tokenList,
                     int ROWS, int COLS)
 {
@@ -32,21 +33,29 @@ void executeCommand(const std::vector<std::string> &tokenList,
             std::cout << "move east" << std::endl;
             std::cout << "move west" << std::endl;
         }
+    }
+    else
+    {
         // TODO figure out logic for actually moving the player with the commands
-        else if (tokenList[1] == "move")
+        // TODO optimize code here to check if NOT move
+        if (tokenList[0] == "move")
         {
-            if (tokenList[2] == "north")
+            if (tokenList[1] == "north")
             {
-
+                std:: cout << "move north was typed" << std::endl;
             }
-            else if (tokenList[2] == "south"){
-
-            }
-            else if (tokenList[2] == "east")
+            else if (tokenList[1] == "south")
             {
-
+                std::cout << "move south was typed" << std:: endl;
             }
-            else if (tokenList[2] == "west")
+            else if (tokenList[1] == "east")
+            {
+                std::cout << "move east was typed" << std::endl;
+            }
+            else if (tokenList[1] == "west")
+            {
+                std::cout << "move north was typed" << std::endl;
+            }
         }
     }
 }
