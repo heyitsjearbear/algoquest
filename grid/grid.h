@@ -5,6 +5,6 @@
 
 void initializeGrid();
 
-// TODO randomize obstacle placement
+// TODO randomize obstacle placement (WILL NEED POINTER)
 
 #endif
