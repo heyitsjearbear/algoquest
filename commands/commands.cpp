@@ -23,41 +23,44 @@ void executeCommand(const std::vector<std::string> &tokenList,
     //  {
     //  }
 
-    if (tokenList.size() == 1)
+    if (tokenList.size() > 2)
     {
-        if (tokenList[0] == "help")
-        {
-            std::cout << "Available commands: " << std::endl;
-            std::cout << "move north" << std::endl;
-            std::cout << "move south" << std::endl;
-            std::cout << "move east" << std::endl;
-            std::cout << "move west" << std::endl;
-        }
+        std::cout << "invalid commmand" << std::endl;
+        return;
     }
-    else
+    if (tokenList[0] != "move" && tokenList[0] != "help")
     {
-        // TODO figure out logic for actually moving the player with the commands
-        // TODO optimize code here to check if NOT move
-        if (tokenList[0] == "move")
-        {
-            if (tokenList[1] == "north")
-            {
-                std:: cout << "move north was typed" << std::endl;
-            }
-            else if (tokenList[1] == "south")
-            {
-                std::cout << "move south was typed" << std:: endl;
-            }
-            else if (tokenList[1] == "east")
-            {
-                std::cout << "move east was typed" << std::endl;
-            }
-            else if (tokenList[1] == "west")
-            {
-                std::cout << "move north was typed" << std::endl;
-            }
-        }
+        std::cout << "invalid command" << std::endl;
+        return;
     }
+    if (tokenList[0] == "help")
+    {
+        std::cout << "Available commands: " << std::endl;
+        std::cout << "move north" << std::endl;
+        std::cout << "move south" << std::endl;
+        std::cout << "move east" << std::endl;
+        std::cout << "move west" << std::endl;
+        return;
+    }
+    // TODO figure out logic for actually moving the player with the commands
+    // TODO optimize code here to check if NOT move
+    if (tokenList[1] == "north")
+    {
+        std:: cout << "move north was typed" << std::endl;
+    }
+    else if (tokenList[1] == "south")
+    {
+        std::cout << "move south was typed" << std:: endl;
+    }
+    else if (tokenList[1] == "east")
+    {
+        std::cout << "move east was typed" << std::endl;
+    }
+    else if (tokenList[1] == "west")
+    {
+        std::cout << "move north was typed" << std::endl;
+    }
+    
 }
 
 // bool checkSpace(const std::string &cmd)
@@ -72,8 +75,7 @@ void executeCommand(const std::vector<std::string> &tokenList,
 //     return false;
 // }
 
-// TODO handle edge case where there is 2 or more
-//  spaces in between two tokens
+
 std::vector<std::string> createTokenList(const std::string &cmd)
 {
 
