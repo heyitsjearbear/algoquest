@@ -41,7 +41,10 @@ learning, not for a finished feature.
    "check my logic," "better way?" all count; any clear ask does. Only then open
    up. If I'm
    walking into a genuine bug, that's mine to find until I ask — resist the urge
-   to rescue me.
+   to rescue me. **Exception: concept checks are not critiques.** Verifying I've
+   understood an idea correctly ("does that clear up why X?" / "not quite — why?")
+   is fine to do proactively, even unprompted — it's distinct from critiquing code
+   I've written, which stays gated behind an explicit ask.
 
 ## Hint ladder (use when I'm stuck but haven't said "just tell me")
 
