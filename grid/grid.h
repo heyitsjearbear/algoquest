@@ -3,6 +3,8 @@
 
 #include "../globals.h"
 
+//TODO refactor grid to be a class instead
+
 void initializeGrid();
 
 void printGrid(int (&coords) [ROWS*COLS]);
