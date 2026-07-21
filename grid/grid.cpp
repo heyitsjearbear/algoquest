@@ -25,8 +25,6 @@ void randomizeObstaclePlacement(int (&coords) [ROWS*COLS], int numberOfObstacles
 
 }
 
-//TODO create function so we can repeatedly update grid so that
-// when we print it, it shows the latest state of the grid
 void printGrid(int (&coords) [ROWS*COLS])
 {
         // top edge output
