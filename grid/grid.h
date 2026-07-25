@@ -2,12 +2,14 @@
 #define GRID_H
 
 #include "../globals.h"
+#include <string>
 
 class Grid {
     public:
         Grid();
         void printGrid() const;
         //TODO movefunction here
+        void movePlayer(std::string direction);
     
     private:
         int pickRandomNumber(int minimum, int maximum) const;

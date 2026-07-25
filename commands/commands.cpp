@@ -14,7 +14,7 @@ std::string getCommand()
 }
 
 // TODO needs to be reframed so we check "if not" concept (read up on it to see where we can optimize  )
-void executeCommand(const std::vector<std::string> &tokenList,
+void executeCommand(Grid &grid, const std::vector<std::string> &tokenList,
                     int ROWS, int COLS)
 {
     // TODO need to figure out how we actually order the if statements in here for executing commands
@@ -49,7 +49,7 @@ void executeCommand(const std::vector<std::string> &tokenList,
         if (tokenList[1] == direction)
         {   
             //TODO this is where you call the move command
-            std::cout << "move command was typed" << std::endl;
+            grid.movePlayer(direction);
             break;
         }
     }

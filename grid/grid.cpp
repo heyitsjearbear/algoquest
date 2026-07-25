@@ -1,6 +1,5 @@
 #include <iostream>
 #include <random>
-
 #include "grid.h"
 
 
@@ -99,4 +98,9 @@ int Grid::pickRandomNumber(int minimum, int maximum) const
 
     return dist(rng);
 
+}
+
+void Grid::movePlayer(std::string direction)
+{
+    std::cout << "move command was typed" << std::endl;
 }

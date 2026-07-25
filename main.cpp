@@ -23,7 +23,7 @@ int main()
         //     std::cout << "COMMAND TYPED: " << tokenList[i] << std::endl;
         // }
 
-        executeCommand(tokenList, ROWS, COLS);
+        executeCommand(grid,tokenList, ROWS, COLS);
 
     } while (playerInput != "exit");
 
