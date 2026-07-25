@@ -5,7 +5,7 @@
 int main()
 {   
 
-    initializeGrid();
+    Grid grid;
 
     std::string playerInput;
 

@@ -3,14 +3,19 @@
 
 #include "../globals.h"
 
-//TODO refactor grid to be a class instead
+class Grid {
+    public:
+        Grid();
+        void printGrid() const;
+        //TODO movefunction here
+    
+    private:
+        int pickRandomNumber(int minimum, int maximum) const;
+        void randomizeObstaclePlacement(int numberOfObstacles);
 
-void initializeGrid();
+        //TODO will need an array that holds the state of the grid
+        int coords[ROWS*COLS];
 
-void printGrid(int (&coords) [ROWS*COLS]);
-
-int pickRandomNumber(int minimum, int maximum);
-
-void randomizeObstaclePlacement(int (&coords) [ROWS*COLS], int numberOfObstacles);
+};
 
 #endif

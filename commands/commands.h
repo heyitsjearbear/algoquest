@@ -1,3 +1,6 @@
+#ifndef COMMANDS_H
+#define COMMANDS_H
+
 #include <string>
 #include <vector>
 std::string getCommand();
@@ -9,3 +12,5 @@ bool checkSpace(const std::string &cmd);
 
 // store token function for commands
 std::vector<std::string> createTokenList(const std::string &cmd);
+
+#endif

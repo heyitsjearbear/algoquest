@@ -3,10 +3,25 @@
 
 #include "grid.h"
 
+
+Grid::Grid()
+
+{
+    for (int i = 0; i<ROWS*COLS; i++)
+    {
+        coords[i] = 0;
+    }
+
+    randomizeObstaclePlacement(5);
+    printGrid(); 
+}
+
 /*
 approach is fisher-yates shuffle. for randomly placing obstacles:
 */
-void randomizeObstaclePlacement(int (&coords) [ROWS*COLS], int numberOfObstacles)
+
+//TODO: debug (not including the last couple of indices for the shuffle)
+void Grid::randomizeObstaclePlacement(int numberOfObstacles)
 {   
     // placing number of obstacles on grid
     for (int i = 0; i<numberOfObstacles; i++)
@@ -17,7 +32,7 @@ void randomizeObstaclePlacement(int (&coords) [ROWS*COLS], int numberOfObstacles
    int maxIndex = (ROWS-1) * (COLS-1) + ROWS;
    for (int i = maxIndex; i>0; i--)
    {
-    int j = pickRandomNumber(0,i);;
+    int j = pickRandomNumber(0,i);
     int temp = coords[i];
     coords[i] = coords[j];
     coords[j] = temp;
@@ -25,7 +40,7 @@ void randomizeObstaclePlacement(int (&coords) [ROWS*COLS], int numberOfObstacles
 
 }
 
-void printGrid(int (&coords) [ROWS*COLS])
+void Grid::printGrid() const
 {
         // top edge output
         std::cout << "+";
@@ -66,15 +81,11 @@ void printGrid(int (&coords) [ROWS*COLS])
         std::cout << std::endl;
 }
 
-void initializeGrid()
-{   
-    int coords[ROWS*COLS] = {0};
-    randomizeObstaclePlacement(coords, 5);
-    printGrid(coords);
-}
 
 //inclusive
-int pickRandomNumber(int minimum, int maximum)
+//TODO decide wheter or not the engine should be a private member
+// instead of a local in this function (it is expensive to keep creating a new engine for each function call)
+int Grid::pickRandomNumber(int minimum, int maximum) const
 {   
     /* 
     random device{}() returns a seed that we pass into the engine
