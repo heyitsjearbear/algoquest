@@ -1,6 +1,5 @@
 #include <string>
 #include <vector>
-#include "../globals.h"
 std::string getCommand();
 
 void executeCommand(const std::vector<std::string> &tokenList,

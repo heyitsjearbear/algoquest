@@ -1,5 +1,6 @@
 #include "commands.h"
 #include <iostream>
+#include <array>
 
 std::string getCommand()
 {
@@ -34,7 +35,7 @@ void executeCommand(const std::vector<std::string> &tokenList,
         return;
     }
     if (tokenList[0] == "help")
-    {
+    {   
         std::cout << "Available commands: " << std::endl;
         std::cout << "move north" << std::endl;
         std::cout << "move south" << std::endl;
@@ -42,23 +43,15 @@ void executeCommand(const std::vector<std::string> &tokenList,
         std::cout << "move west" << std::endl;
         return;
     }
-    // TODO figure out logic for actually moving the player with the commands
-    // TODO optimize code here to check if NOT move
-    if (tokenList[1] == "north")
+    std::array<std::string, 4> directions = {"north", "south", "east", "west"};
+    for (auto direction : directions )
     {
-        std:: cout << "move north was typed" << std::endl;
-    }
-    else if (tokenList[1] == "south")
-    {
-        std::cout << "move south was typed" << std:: endl;
-    }
-    else if (tokenList[1] == "east")
-    {
-        std::cout << "move east was typed" << std::endl;
-    }
-    else if (tokenList[1] == "west")
-    {
-        std::cout << "move north was typed" << std::endl;
+        if (tokenList[1] == direction)
+        {   
+            //TODO this is where you call the move command
+            std::cout << "move command was typed" << std::endl;
+            break;
+        }
     }
     
 }
