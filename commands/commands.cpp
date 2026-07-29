@@ -1,6 +1,5 @@
 #include "commands.h"
 #include <iostream>
-#include <array>
 
 std::string getCommand()
 {
