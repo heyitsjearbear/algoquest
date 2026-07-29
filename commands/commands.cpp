@@ -50,9 +50,11 @@ void executeCommand(Grid &grid, const std::vector<std::string> &tokenList,
         {   
             //TODO this is where you call the move command
             grid.movePlayer(direction);
-            break;
+            return;
         }
     }
+    std::cout << "invalid command" << std::endl;
+    return;
     
 }
 

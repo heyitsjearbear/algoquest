@@ -20,6 +20,7 @@ approach is fisher-yates shuffle. for randomly placing obstacles:
 */
 
 //TODO: debug (not including the last couple of indices for the shuffle)
+//TODO need to figure out how we place it onto the coords grid and also move this randomize into the constructor
 void Grid::randomizeObstaclePlacement(int numberOfObstacles)
 {   
     // placing number of obstacles on grid
@@ -31,7 +32,10 @@ void Grid::randomizeObstaclePlacement(int numberOfObstacles)
    int maxIndex = (ROWS-1) * (COLS-1) + ROWS;
    for (int i = maxIndex; i>0; i--)
    {
-    int j = pickRandomNumber(0,i);
+    rng = std::mt19937(std::random_device{}());
+    dist = std::uniform_int_distribution<int> (0, i);
+
+    int j = dist(rng);
     int temp = coords[i];
     coords[i] = coords[j];
     coords[j] = temp;
@@ -78,26 +82,6 @@ void Grid::printGrid() const
         std::cout << "+";
     
         std::cout << std::endl;
-}
-
-
-//inclusive
-//TODO decide wheter or not the engine should be a private member
-// instead of a local in this function (it is expensive to keep creating a new engine for each function call)
-int Grid::pickRandomNumber(int minimum, int maximum) const
-{   
-    /* 
-    random device{}() returns a seed that we pass into the engine
-    "rng" that produces the long stream of random numbers.
-
-    uniform_int_distribution allows us to map raw engine output into 
-    the desired range
-    */ 
-    std::mt19937 rng(std::random_device{}());
-    std::uniform_int_distribution<int> dist (minimum,maximum);
-
-    return dist(rng);
-
 }
 
 void Grid::movePlayer(std::string direction)

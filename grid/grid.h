@@ -2,6 +2,7 @@
 #define GRID_H
 
 #include "../globals.h"
+#include <random>
 #include <string>
 
 class Grid {
@@ -12,8 +13,11 @@ class Grid {
         void movePlayer(std::string direction);
     
     private:
-        int pickRandomNumber(int minimum, int maximum) const;
         void randomizeObstaclePlacement(int numberOfObstacles);
+
+        //randomizer engine
+        std::mt19937 rng;
+        std::uniform_int_distribution<int> dist;
 
         //TODO will need an array that holds the state of the grid
         int coords[ROWS*COLS];
