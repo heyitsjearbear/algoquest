@@ -18,7 +18,6 @@ Grid::Grid()
 approach is fisher-yates shuffle. for randomly placing obstacles:
 */
 
-//TODO: debug (not including the last couple of indices for the shuffle)
 //TODO need to figure out how we place it onto the coords grid and also move this randomize into the constructor
 void Grid::randomizeObstaclePlacement(int numberOfObstacles)
 {   
