@@ -1,5 +1,6 @@
 #include "commands.h"
 #include <iostream>
+#include <array>
 
 std::string getCommand()
 {
@@ -75,10 +76,10 @@ std::vector<std::string> createTokenList(const std::string &cmd)
 
     std::vector<std::string> tokenList;
     std::string currentString = "";
-    for (int i = 0; i < cmd.length(); i++)
+    for (char c : cmd)
     {
         // check for space
-        if (cmd[i] == ' ')
+        if (c == ' ')
         {
             if (!currentString.empty())
             {
@@ -88,7 +89,7 @@ std::vector<std::string> createTokenList(const std::string &cmd)
         }
         // if not a space
         else
-            currentString += cmd[i];
+            currentString += c;
     }
     // add last token if the string isn't empty
     if (!currentString.empty())
