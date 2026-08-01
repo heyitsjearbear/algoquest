@@ -11,6 +11,8 @@ Grid::Grid()
     }
 
     randomizeObstaclePlacement(5);
+    // TODO place character at (0,0), will use 100 for now
+    coords[coordinateConverter(0,0) == 100];
     printGrid(); 
 }
 
@@ -40,6 +42,13 @@ void Grid::randomizeObstaclePlacement(int numberOfObstacles)
    }
 
 }
+/*
+TODO need to figure out how we take in a coordinate and convert to spot in coords array
+*/
+int Grid::coordinateConverter(int x, int y) const
+{
+    return x * COLS + y;
+}
 
 void Grid::printGrid() const
 {
@@ -57,8 +66,12 @@ void Grid::printGrid() const
         {
             for (int j = 0; j < COLS; j++)
             {   
+                // Placing obstacle
                 if(coords[i * COLS + j] == 1)
                     std::cout << "|#| "; 
+                else if (coords[i * COLS + j] == 100)
+                    std::cout << "|P|";
+                // empty spot
                 else
                     std::cout << "|.| ";
             }

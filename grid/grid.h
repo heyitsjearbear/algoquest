@@ -9,6 +9,7 @@ class Grid {
     public:
         Grid();
         void printGrid() const;
+        int coordinateConverter(int x, int y) const;
         //TODO movefunction here
         void movePlayer(std::string direction);
     

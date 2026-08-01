@@ -13,16 +13,9 @@ std::string getCommand()
     return input;
 }
 
-// TODO needs to be reframed so we check "if not" concept (read up on it to see where we can optimize  )
 void executeCommand(Grid &grid, const std::vector<std::string> &tokenList,
                     int ROWS, int COLS)
 {
-    // TODO need to figure out how we actually order the if statements in here for executing commands
-    //  cases where we do have space then here is
-    //  parsing  commands
-    //  if (checkSpace(cmd))
-    //  {
-    //  }
 
     if (tokenList.size() > 2)
     {
