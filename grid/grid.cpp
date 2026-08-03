@@ -12,7 +12,7 @@ Grid::Grid()
 
     randomizeObstaclePlacement(5);
     // TODO place character at (0,0), will use 100 for now
-    coords[coordinateConverter(0,0) == 100];
+    coords[coordinateConverter(0,0)] = 100;
     printGrid(); 
 }
 
