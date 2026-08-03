@@ -4,23 +4,27 @@
 
 Grid::Grid()
 
-{
+{   
+    //assign empty spots in grid
     for (int i = 0; i<ROWS*COLS; i++)
     {
         coords[i] = 0;
     }
 
-    randomizeObstaclePlacement(5);
-    // TODO place character at (0,0), will use 100 for now
-    coords[coordinateConverter(0,0)] = 100;
+    randomizeObstaclePlacement(3);
+
+    // 100 marks the player, starting is at (0,0)
+    playerCoords.x = 0;
+    playerCoords.y = 0;
+    int playerIndex = pairToIndex(0,0);
+    coords[playerIndex] = 100;
+
     printGrid(); 
 }
 
 /*
 approach is fisher-yates shuffle. for randomly placing obstacles:
 */
-
-//TODO need to figure out how we place it onto the coords grid and also move this randomize into the constructor
 void Grid::randomizeObstaclePlacement(int numberOfObstacles)
 {   
     // placing number of obstacles on grid
@@ -42,10 +46,8 @@ void Grid::randomizeObstaclePlacement(int numberOfObstacles)
    }
 
 }
-/*
-TODO need to figure out how we take in a coordinate and convert to spot in coords array
-*/
-int Grid::coordinateConverter(int x, int y) const
+
+int Grid::pairToIndex(int x, int y) const
 {
     return x * COLS + y;
 }
@@ -96,6 +98,19 @@ void Grid::printGrid() const
 }
 
 void Grid::movePlayer(std::string direction)
-{
+{   
+    // TODO utilizePlayerPosition to recalculate updated position
     std::cout << "move command was typed" << std::endl;
+    // TODO finish instructions for moving player using playerCoords and playerIndex
+    if (direction == "north")
+    {
+        
+    }
+
+}
+
+Grid::Coordinate convertToGrid (int index, int row, int col)
+{
+    row = index / COLS;
+    col = index % COLS;
 }

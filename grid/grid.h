@@ -9,11 +9,19 @@ class Grid {
     public:
         Grid();
         void printGrid() const;
-        int coordinateConverter(int x, int y) const;
+        int pairToIndex(int x, int y) const;
         //TODO movefunction here
         void movePlayer(std::string direction);
+
+        struct Coordinate {
+            int x, y;
+        };
+        Coordinate convertToGrid (int index, int row, int col);
+
     
     private:
+        Coordinate playerCoords;
+        int playerIndex;
         void randomizeObstaclePlacement(int numberOfObstacles);
 
         //randomizer engine
