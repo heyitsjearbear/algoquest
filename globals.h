@@ -1,7 +1,7 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
-constexpr int ROWS = 2;
-constexpr int COLS = 2;
+constexpr int ROWS = 5;
+constexpr int COLS = 4;
 
 #endif

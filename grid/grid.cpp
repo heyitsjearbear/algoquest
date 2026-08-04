@@ -11,12 +11,12 @@ Grid::Grid()
         coords[i] = 0;
     }
 
-    randomizeObstaclePlacement(3);
+    // randomizeObstaclePlacement(3);
 
     // 100 marks the player, starting is at (0,0)
     playerCoords.x = 0;
     playerCoords.y = 0;
-    int playerIndex = pairToIndex(0,0);
+    playerIndex = pairToIndex(0,0);
     coords[playerIndex] = 100;
 
     printGrid(); 
@@ -102,15 +102,48 @@ void Grid::movePlayer(std::string direction)
     // TODO utilizePlayerPosition to recalculate updated position
     std::cout << "move command was typed" << std::endl;
     // TODO finish instructions for moving player using playerCoords and playerIndex
-    if (direction == "north")
-    {
+    if (direction == "north") // move player up 1 row
+    {   
+        // set to 0 since player left the spot
+        coords[playerIndex] = 0;
+        playerCoords.x -= 1;
+        playerIndex = pairToIndex(playerCoords.x, playerCoords.y);
+        coords[playerIndex] = 100;
         
     }
-
+    else if (direction == "south")
+    {   
+        coords[playerIndex] = 0;
+        playerCoords.x += 1;
+        playerIndex = pairToIndex(playerCoords.x, playerCoords.y);
+        coords[playerIndex] = 100;
+    }
+    else if (direction == "east")
+    {   
+        coords[playerIndex] = 0;
+        playerCoords.y += 1;
+        playerIndex = pairToIndex(playerCoords.x, playerCoords.y);
+        coords[playerIndex] = 100;
+    }
+    else if (direction == "west")
+    {   
+        coords[playerIndex] = 0;
+        playerCoords.y -=1;
+        playerIndex = pairToIndex(playerCoords.x, playerCoords.y);
+        coords[playerIndex] = 100;
+    }
 }
 
+// Take current an index and convert it to a row/col pair
+// TODO do you actually need this?
 Grid::Coordinate convertToGrid (int index, int row, int col)
 {
     row = index / COLS;
     col = index % COLS;
+    return {row, col};
+}
+
+int Grid::getPlayerIndex() const
+{
+    return playerIndex;
 }

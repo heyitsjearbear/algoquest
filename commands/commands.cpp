@@ -41,8 +41,9 @@ void executeCommand(Grid &grid, const std::vector<std::string> &tokenList,
     {
         if (tokenList[1] == direction)
         {   
-            //TODO this is where you call the move command
+            //TODO call getplayerindex for bounds checking + obstacle checking
             grid.movePlayer(direction);
+            grid.printGrid();
             return;
         }
     }

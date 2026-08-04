@@ -10,8 +10,8 @@ class Grid {
         Grid();
         void printGrid() const;
         int pairToIndex(int x, int y) const;
-        //TODO movefunction here
         void movePlayer(std::string direction);
+        int getPlayerIndex() const;
 
         struct Coordinate {
             int x, y;
