@@ -72,14 +72,15 @@ Throughout this course, remember to embrace C++'s strengths: manual memory manag
 
 To begin working on this project:
 
-1. **Fork the repository** — Click the "Fork" button at the top of this repository. When prompted, check the option **"Copy the main branch only"**. This ensures your fork only contains the starter code from the `main` branch. You can still view all branches (including the `solution` branch) in the original repository, but your fork will start clean with just the starter code.
-2. **Clone your fork** — `git clone https://github.com/YOUR_USERNAME/AlgoQuest.git`
+1. **Fork the repository** — Click the "Fork" button at the top of this repository. When prompted, make sure you're viewing the `starter` branch before forking to ensure you get the clean starter code.
+2. **Clone your fork** — `git clone https://github.com/YOUR_USERNAME/AlgoQuest.git --branch starter`
 3. **Create your working branch** — `git checkout -b your-name/module-1` (or similar naming convention)
 4. **Start coding!** — Begin with Module 1 and work through each module sequentially
 
 **Important**: 
-- The `main` branch contains the starter code and project structure. This is where you should begin your implementation.
-- The `solution` branch contains the owner's working solution. As the owner completes each module, they create separate branches (e.g., `module-1`, `module-2`) and merge them into `solution`. Please do not work directly from `solution` — use the `main` branch instead.
+- The `starter` branch contains the clean starter code and project structure. Fork or clone from here to begin your implementation.
+- The `main` branch contains the owner's working implementation as they complete each module. Do not fork from here if you want to start fresh.
+- The `solution` branch contains an alternative version of the owner's working solution. Please do not work directly from either `main` or `solution` — use the `starter` branch instead.
 
 **Note on File Structure**: 
 - No specific file structure is provided intentionally. It is up to you as the programmer to decide how to organize your codebase. This is part of the learning experience—you'll need to think about how to structure your project, organize header files, source files, and modules. Consider factors like separation of concerns, maintainability, and scalability when designing your project structure.
