@@ -97,14 +97,22 @@ void Grid::printGrid() const
         std::cout << std::endl;
 }
 
+// TODO refactor later LOL (Pass in your coords grid, and the 
+// coords you want to go to and return true/false if it's a valid move or not?)
 void Grid::movePlayer(std::string direction)
 {   
-    // TODO utilizePlayerPosition to recalculate updated position
-    std::cout << "move command was typed" << std::endl;
-    // TODO finish instructions for moving player using playerCoords and playerIndex
-    if (direction == "north") // move player up 1 row
+    if (direction == "north")
     {   
-        // set to 0 since player left the spot
+        if (playerCoords.x - 1 < 0)
+        {
+            std::cout << "coords out of bounds" << std::endl;
+            return;
+        }
+        if (coords[playerCoords.x - 1] == 1)
+        {
+            std::cout << "obstacle in the way" << std::endl;
+            return;
+        }
         coords[playerIndex] = 0;
         playerCoords.x -= 1;
         playerIndex = pairToIndex(playerCoords.x, playerCoords.y);
@@ -113,6 +121,16 @@ void Grid::movePlayer(std::string direction)
     }
     else if (direction == "south")
     {   
+        if (playerCoords.x + 1 == ROWS)
+        {
+            std::cout << "coords out of bounds" << std::endl;
+            return;
+        }
+        if (coords[playerCoords.x + 1] == 1)
+        {
+            std::cout << "obstacle in the way" << std::endl;
+            return;
+        }
         coords[playerIndex] = 0;
         playerCoords.x += 1;
         playerIndex = pairToIndex(playerCoords.x, playerCoords.y);
@@ -120,6 +138,16 @@ void Grid::movePlayer(std::string direction)
     }
     else if (direction == "east")
     {   
+        if (playerCoords.y + 1 == COLS)
+        {
+            std::cout << "coords out of bounds" << std::endl;
+            return;
+        }
+        if (coords[playerCoords.y] == 1)
+        {
+            std:: cout << "obstacle in the way" << std::endl;
+            return;
+        }
         coords[playerIndex] = 0;
         playerCoords.y += 1;
         playerIndex = pairToIndex(playerCoords.x, playerCoords.y);
@@ -127,20 +155,20 @@ void Grid::movePlayer(std::string direction)
     }
     else if (direction == "west")
     {   
+        if (playerCoords.y - 1 < 0)
+        {
+            std::cout << "coords out of bounds" << std::endl;
+            return;
+        }
+        if (coords[playerCoords.y] == 1)
+        {
+            std::cout << "ostacle in the way" << std::endl;
+        }
         coords[playerIndex] = 0;
         playerCoords.y -=1;
         playerIndex = pairToIndex(playerCoords.x, playerCoords.y);
         coords[playerIndex] = 100;
     }
-}
-
-// Take current an index and convert it to a row/col pair
-// TODO do you actually need this?
-Grid::Coordinate convertToGrid (int index, int row, int col)
-{
-    row = index / COLS;
-    col = index % COLS;
-    return {row, col};
 }
 
 int Grid::getPlayerIndex() const
