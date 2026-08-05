@@ -11,7 +11,7 @@ Grid::Grid()
         coords[i] = 0;
     }
 
-    // randomizeObstaclePlacement(3);
+    randomizeObstaclePlacement(3);
 
     // 100 marks the player, starting is at (0,0)
     playerCoords.x = 0;
@@ -108,6 +108,8 @@ void Grid::movePlayer(std::string direction)
             std::cout << "coords out of bounds" << std::endl;
             return;
         }
+        // TODO DEBUG OBSTACLE CHECK FOR EACH DIRECTION
+        // NEED TO CALL pairToIndex
         if (coords[playerCoords.x - 1] == 1)
         {
             std::cout << "obstacle in the way" << std::endl;
