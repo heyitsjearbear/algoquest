@@ -35,7 +35,12 @@ void executeCommand(Grid &grid, const std::vector<std::string> &tokenList,
         std::cout << "move south" << std::endl;
         std::cout << "move east" << std::endl;
         std::cout << "move west" << std::endl;
+        std::cout << "map" << std::endl;
         return;
+    }
+    if (tokenList[0] == "map")
+    {
+        grid.printGrid();
     }
     std::array<std::string, 4> directions = {"north", "south", "east", "west"};
     for (auto direction : directions )
@@ -43,7 +48,6 @@ void executeCommand(Grid &grid, const std::vector<std::string> &tokenList,
         if (tokenList[1] == direction)
         {   
             grid.movePlayer(direction);
-            grid.printGrid();
             return;
         }
     }
