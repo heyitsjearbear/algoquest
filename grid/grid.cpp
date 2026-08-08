@@ -1,7 +1,7 @@
 #include <iostream>
 #include "grid.h"
 
-
+// TODO enum for types of values map to what (enemy, obstacle, player etc)
 Grid::Grid()
 
 {   
