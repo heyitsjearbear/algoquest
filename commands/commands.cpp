@@ -23,7 +23,7 @@ void executeCommand(Grid &grid, const std::vector<std::string> &tokenList,
         std::cout << "invalid commmand" << std::endl;
         return;
     }
-    if (tokenList[0] != "move" && tokenList[0] != "help")
+    if (tokenList[0] != "move" && tokenList[0] != "help" && tokenList[0] != "map")
     {
         std::cout << "invalid command" << std::endl;
         return;
