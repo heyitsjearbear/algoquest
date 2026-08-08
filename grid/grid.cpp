@@ -108,9 +108,7 @@ void Grid::movePlayer(std::string direction)
             std::cout << "coords out of bounds" << std::endl;
             return;
         }
-        // TODO DEBUG OBSTACLE CHECK FOR EACH DIRECTION
-        // NEED TO CALL pairToIndex
-        if (coords[playerCoords.x - 1] == 1)
+        if (coords[pairToIndex(playerCoords.x-1, playerCoords.y)] == 1)
         {
             std::cout << "obstacle in the way" << std::endl;
             return;
@@ -128,7 +126,7 @@ void Grid::movePlayer(std::string direction)
             std::cout << "coords out of bounds" << std::endl;
             return;
         }
-        if (coords[playerCoords.x + 1] == 1)
+        if (coords[pairToIndex(playerCoords.x + 1,playerCoords.y)] == 1)
         {
             std::cout << "obstacle in the way" << std::endl;
             return;
@@ -145,7 +143,7 @@ void Grid::movePlayer(std::string direction)
             std::cout << "coords out of bounds" << std::endl;
             return;
         }
-        if (coords[playerCoords.y] == 1)
+        if (coords[pairToIndex(playerCoords.x, playerCoords.y+1)] == 1)
         {
             std:: cout << "obstacle in the way" << std::endl;
             return;
@@ -162,9 +160,10 @@ void Grid::movePlayer(std::string direction)
             std::cout << "coords out of bounds" << std::endl;
             return;
         }
-        if (coords[playerCoords.y] == 1)
+        if (coords[pairToIndex(playerCoords.x, playerCoords.y - 1)] == 1)
         {
             std::cout << "ostacle in the way" << std::endl;
+            return;
         }
         coords[playerIndex] = 0;
         playerCoords.y -=1;
