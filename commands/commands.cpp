@@ -41,6 +41,7 @@ void executeCommand(Grid &grid, const std::vector<std::string> &tokenList,
     if (tokenList[0] == "map")
     {
         grid.printGrid();
+        return;
     }
     std::array<std::string, 4> directions = {"north", "south", "east", "west"};
     for (auto direction : directions )
