@@ -14,17 +14,16 @@ class HashMap {
 
     HashMap(const HashMap &other);
     HashMap &operator=(const HashMap &other);
-    
+
     private:
-    Node <K, V>* buckets;
-    std::size_t capacity;
-    std::size_t size_;
-    
     struct Node {
         K key;
         V value;
-        Node * next;
+        Node *next;
     };
+    Node <K, V> *buckets;
+    std::size_t capacity;
+    std::size_t size;
 };
 
 #endif
