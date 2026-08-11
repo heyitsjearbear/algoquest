@@ -1,17 +1,20 @@
 #ifndef HASHMAP_H
-#define HASMAP_H
+#define HASHMAP_H
 
 template <typename K, typename V>
-class Hashmap {
+class HashMap {
     public:
-    void insert(const K& key, const V& value);
-    V* get(const K& key);
-    bool remove(const K& key);
-    std::size_t hashKey (const K& key, std::size_t capacity);
+    void insert(const K &key, const V &value);
+    V* get(const K &key);
+    bool remove(const K &key);
+    std::size_t hashKey (const K &key, std::size_t capacity);
     
-    Hashmap();
+    HashMap();
     ~HashMap();
 
+    HashMap(const HashMap &other);
+    HashMap &operator=(const HashMap &other);
+    
     private:
     Node <K, V>* buckets;
     std::size_t capacity;
@@ -21,7 +24,7 @@ class Hashmap {
         K key;
         V value;
         Node * next;
-    }
+    };
 };
 
 #endif
