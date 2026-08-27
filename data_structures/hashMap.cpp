@@ -37,7 +37,7 @@ void HashMap<K,V>::insert(const K &key, const V &value)
         prev = bucket;
         bucket = bucket->next;
     }
-    lastNode = bucket;
+    Node *lastNode = bucket;
     bucket = new Node;
     bucket->key = key;
     bucket-> value = value;
@@ -52,4 +52,10 @@ template <typename K, typename V>
 std::size_t HashMap<K,V>::hashKey(const K&key, std::size_t capacity)
 {
    return std::hash<K>{}(key) % capacity;
+}
+
+template <typename K, typename V>
+V* HashMap<K, V>::get(const K&key)
+{
+    return;
 }
